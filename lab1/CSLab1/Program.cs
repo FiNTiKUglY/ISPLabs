@@ -11,13 +11,13 @@ namespace CSLab1
 {
     class Program
     {
-        static void ChangeColor(int i, int j, int[,] mas)
+        static void changeColor(int i, int j, int[,] mas)
         {
             if (mas[i, j] == 0) mas[i, j] = 1;
             else mas[i, j] = 0;
         }
 
-        static void WinChecker(int[,] mas1, int[,] mas2, int size)
+        static void winChecker(int[,] mas1, int[,] mas2, int size)
         {
             bool check = true;
             for (int i = 0; i < size; i++)
@@ -31,7 +31,7 @@ namespace CSLab1
             else Console.WriteLine("вВы проиграли (");
         }
 
-        static bool InputChecker(string size)
+        static bool inputChecker(string size)
         {
             bool check;
             int sizeI;
@@ -47,13 +47,12 @@ namespace CSLab1
             {
                 Console.WriteLine("Введите размер поля (квадрат N*N): ");
                 sizeS = Console.ReadLine();
-                if (InputChecker(sizeS)) break;
+                if (inputChecker(sizeS)) break;
                 Console.Clear();
             }
             int size = Convert.ToInt32(sizeS);
             Console.WriteLine();
             int[,] field1 = new int[size, size];   
-            char[,] field2 = new char[size, size];
             Random rnd = new Random();
             for (int i = 0; i < size; i++)
             {
@@ -66,21 +65,20 @@ namespace CSLab1
             {
                 for (int j = 0; j < size; j++)
                 {
-                    if (field1[i, j] == 1) field2[i, j] = '■';
-                    else field2[i, j] = '□';
-                    Console.Write("{0} ", field2[i, j]);
+                    if (field1[i, j] == 1) Console.Write("■ ");
+                    else Console.Write("□ ");
                 }
                 Console.WriteLine();
             }
             Thread.Sleep(size * size * 200);
             Console.Clear();
-            int[,] field3 = new int[size, size];
-            char[,] field4 = new char[size, size];
+            int[,] field2 = new int[size, size];
+            char[,] field3 = new char[size, size];
             for (int i = 0; i < size; i++)
             {
                 for (int j = 0; j < size; j++)
                 {
-                    field3[i, j] = 0;
+                    field2[i, j] = 0;
                 }
             }
             int i1 = 0, j1 = 0;
@@ -91,16 +89,16 @@ namespace CSLab1
                 {
                     for (int j = 0; j < size; j++)
                     {
-                        if (field3[i, j] == 0) field4[i, j] = '□';
-                        else field4[i, j] = '■';
-                        field4[i1, j1] = 'x';
-                        Console.Write("{0} ", field4[i, j]);
+                        if (field2[i, j] == 0) field3[i, j] = '□';
+                        else field3[i, j] = '■';
+                        field3[i1, j1] = 'x';
+                        Console.Write("{0} ", field3[i, j]);
                     }
                     Console.WriteLine();
                 }
                 key = Console.ReadKey();
                 if (key.Key == ConsoleKey.Escape) break;
-                else if (key.Key == ConsoleKey.Enter) ChangeColor(i1, j1, field3);
+                else if (key.Key == ConsoleKey.Enter) changeColor(i1, j1, field2);
                 else if (key.Key == ConsoleKey.RightArrow)
                 {
                     j1++;
@@ -124,16 +122,16 @@ namespace CSLab1
                 Console.Clear();
             }
             Console.Clear();
-            WinChecker(field1, field3, size);
+            winChecker(field1, field2, size);
             Console.WriteLine();
             Console.WriteLine("Ваш вариант: ");
             for (int i = 0; i < size; i++)
             {
                 for (int j = 0; j < size; j++)
                 {
-                    if (field3[i, j] == 0) field4[i, j] = '□';
-                    else field4[i, j] = '■';
-                    Console.Write("{0} ", field4[i, j]);
+                    if (field2[i, j] == 0) field3[i, j] = '□';
+                    else field3[i, j] = '■';
+                    Console.Write("{0} ", field3[i, j]);
                 }
                 Console.WriteLine();
             }
@@ -143,7 +141,8 @@ namespace CSLab1
             {
                 for (int j = 0; j < size; j++)
                 {
-                    Console.Write("{0} ", field2[i, j]);
+                    if (field1[i, j] == 1) Console.Write("■ ");
+                    else Console.Write("□ ");
                 }
                 Console.WriteLine();
             }
