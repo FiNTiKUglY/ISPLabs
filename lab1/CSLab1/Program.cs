@@ -16,6 +16,7 @@ namespace CSLab1
             if (mas[i, j] == 0) mas[i, j] = 1;
             else mas[i, j] = 0;
         }
+
         static void WinChecker(int[,] mas1, int[,] mas2, int size)
         {
             bool check = true;
@@ -29,6 +30,7 @@ namespace CSLab1
             if (check) Console.WriteLine("вВы выиграли!");
             else Console.WriteLine("вВы проиграли (");
         }
+
         static bool InputChecker(string size)
         {
             bool check;
@@ -37,6 +39,7 @@ namespace CSLab1
             if (check) return true;
             else return false;
         }
+
         static void Main()
         {
             string sizeS;
