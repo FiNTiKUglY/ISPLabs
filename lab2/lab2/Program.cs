@@ -6,6 +6,25 @@ namespace lab2
 {
     class Program
     {
+        static int DegreeCounter(int first, int second)
+        {
+            int res1 = 0;
+            int res2 = 0;
+            int res;
+            while (first != 0)
+            {
+                first  /= 2;
+                res1 += first;
+            }
+            while (second != 0)
+            {
+                second /= 2;
+                res2 += second;
+            }
+            res = Math.Abs(res2 - res1);
+            return res;
+        }
+
         static bool LetterChecker(string Line, int pos)    // Для 1-го задания
         {
             if (Line[pos] == 'a' || Line[pos] == 'e' || Line[pos] == 'i' || Line[pos] == 'o' || Line[pos] == 'u') return true;
@@ -30,7 +49,10 @@ namespace lab2
             {
                 if (LetterChecker(Line, i))
                 {
-                    if (Line[i + 1] == 122) NewLine.Append("a");
+                    if (Line[i + 1] == 122)
+                    {
+                        NewLine.Append("a");
+                    }
                     else
                     {
                         int temp = Line[i + 1] + 1;
@@ -42,10 +64,7 @@ namespace lab2
                     NewLine.Append(Line[i + 1]);
                 }
             }
-            for (int i = 0; i < Line.Length; i++)
-            {
-                Console.Write("{0}", NewLine[i]);
-            }
+            Console.Write("{0}", NewLine);
         }
 
         static bool IntCheckerer(string min, string max)                // Для 2-го задания
@@ -114,25 +133,18 @@ namespace lab2
             }
             int min = Convert.ToInt32(minS);
             int max = Convert.ToInt32(maxS);
-            BigInteger product = 1;
-            int i;
-            for (i = min; i <= max; i++)
+            bool zero = false;
+            for (int i = min; i <= max; i++)
             {
-                product *= i;
-            }
-            i = 0;
-            while(true)
-            {
-                BigInteger temp = product % (BigInteger)Math.Pow(2, (double)i);
-                if (!(temp == 0))
+                if (i == 0)
                 {
-                    i--;
+                    zero = true;
                     break;
                 }
-                i++;
             }
-            if (product == 0) Console.WriteLine("Степень бесконечна, так как произведение чисел в диапазоне равно 0");
-            else Console.WriteLine("Максимальная степень двойки: {0}", i);
+            int counter = DegreeCounter(min - 1, max);  
+            if (zero) Console.WriteLine("Степень бесконечна, так как произведение чисел в диапазоне равно 0");
+            else Console.WriteLine("Максимальная степень двойки: {0}", counter); 
 
             NextTask();
 
