@@ -21,7 +21,7 @@ namespace lab2
                 second /= 2;
                 res2 += second;
             }
-            res = Math.Abs(res2 - res1);
+            res = res2 - res1;
             return res;
         }
 
