@@ -1,0 +1,18 @@
+C:\Users\ilyap\source\repos\C#Labs\lab4\lab4\bin\Debug\lab4.exe.config
+C:\Users\ilyap\source\repos\C#Labs\lab4\lab4\bin\Debug\lab4.exe
+C:\Users\ilyap\source\repos\C#Labs\lab4\lab4\bin\Debug\lab4.pdb
+C:\Users\ilyap\source\repos\C#Labs\lab4\lab4\obj\Debug\lab4.csprojAssemblyReference.cache
+C:\Users\ilyap\source\repos\C#Labs\lab4\lab4\obj\Debug\lab4.csproj.CoreCompileInputs.cache
+C:\Users\ilyap\source\repos\C#Labs\lab4\lab4\obj\Debug\lab4.exe
+C:\Users\ilyap\source\repos\C#Labs\lab4\lab4\obj\Debug\lab4.pdb
+C:\Users\ilyap\source\repos\C#Labs\lab4\lab4\obj\Debug\lab4.Properties.Resources.resources
+C:\Users\ilyap\source\repos\C#Labs\lab4\lab4\obj\Debug\lab4.csproj.GenerateResource.cache
+C:\Users\ilyap\source\repos\C#Labs\lab4\task 1\lab4\bin\Debug\lab4.exe.config
+C:\Users\ilyap\source\repos\C#Labs\lab4\task 1\lab4\bin\Debug\lab4.exe
+C:\Users\ilyap\source\repos\C#Labs\lab4\task 1\lab4\bin\Debug\lab4.pdb
+C:\Users\ilyap\source\repos\C#Labs\lab4\task 1\lab4\obj\Debug\lab4.csprojAssemblyReference.cache
+C:\Users\ilyap\source\repos\C#Labs\lab4\task 1\lab4\obj\Debug\lab4.Properties.Resources.resources
+C:\Users\ilyap\source\repos\C#Labs\lab4\task 1\lab4\obj\Debug\lab4.csproj.GenerateResource.cache
+C:\Users\ilyap\source\repos\C#Labs\lab4\task 1\lab4\obj\Debug\lab4.csproj.CoreCompileInputs.cache
+C:\Users\ilyap\source\repos\C#Labs\lab4\task 1\lab4\obj\Debug\lab4.exe
+C:\Users\ilyap\source\repos\C#Labs\lab4\task 1\lab4\obj\Debug\lab4.pdb
