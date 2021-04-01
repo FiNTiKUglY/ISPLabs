@@ -43,7 +43,7 @@ namespace lab4
             if (err != 0)
             {
                 str = errStr((uint)err);
-                MessageBox(IntPtr.Zero, str, "My Message", 0);
+                MessageBox(IntPtr.Zero, str, "MCI error", 0);
                 Console.ReadKey();
             }
         }
