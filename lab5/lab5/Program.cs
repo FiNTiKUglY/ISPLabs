@@ -3,10 +3,22 @@ using System.Collections.Generic;
 
 namespace lab3
 {
-    enum Gender
+    enum Gender: int
     {
         Male = 1,
-        Female = 2,
+        Female,
+    }
+    enum Nation: int
+    {
+        BY = 1,
+        RU,
+        US,
+        UA,
+        DE,
+        GB,
+        PL,
+        ES,
+        TR,
     }
     struct Physical
     {
@@ -20,6 +32,7 @@ namespace lab3
         static public int amount = 0;
         protected Physical Physics;
         private int sex;
+        private int nationality;
         public int ID { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
@@ -37,7 +50,48 @@ namespace lab3
                 sex = Convert.ToInt32(value);
             }
         }    
-        public string Nationality { get; set; }
+        public string Nationality 
+        { 
+            get
+            {
+                if (sex != 2)
+                {
+                    switch (nationality)
+                    {
+                        case (int)Nation.BY: return "белорус";
+                        case (int)Nation.DE: return "немец";
+                        case (int)Nation.ES: return "испанец";
+                        case (int)Nation.RU: return "русский";
+                        case (int)Nation.TR: return "турок";
+                        case (int)Nation.PL: return "поляк";
+                        case (int)Nation.UA: return "украинец";
+                        case (int)Nation.US: return "амереканец";
+                        case (int)Nation.GB: return "британец";
+                        default: return "неизвестно";
+                    }
+                }
+                else
+                {
+                    switch (nationality)
+                    {
+                        case (int)Nation.BY: return "белоруска";
+                        case (int)Nation.DE: return "немка";
+                        case (int)Nation.ES: return "испанка";
+                        case (int)Nation.RU: return "русская";
+                        case (int)Nation.TR: return "турчанка";
+                        case (int)Nation.PL: return "полячка";
+                        case (int)Nation.UA: return "украинка";
+                        case (int)Nation.US: return "амереканка";
+                        case (int)Nation.GB: return "британка";
+                        default: return "неизвестно";
+                    }
+                }
+            }
+            set
+            {
+                nationality = Convert.ToInt32(value);
+            }
+        }
 
         public Athlete(string name, string surname, int age, string sex, string nationality, int weight, int height, int stamina, int speed)
         {
@@ -85,10 +139,7 @@ namespace lab3
             }
         }
         public abstract void SmallInfo();
-        public void GetInfo()
-        {
-            Console.WriteLine($"{Surname} {Name}, {Age} лет, {Sex}, {Nationality}, Рост: {Physics.height}, Вес: {Physics.weight}");
-        }
+        public abstract void GetInfo();
         public abstract string GetSpeciality();
        
         public void WeightCheck()
@@ -146,7 +197,7 @@ namespace lab3
         {
             Console.WriteLine($"{ID}. Футболист {Surname} {Name}");
         }
-        public void GetInfo()
+        public override void GetInfo()
         {
             Console.WriteLine($"Футболист {Surname} {Name}, {Age} лет, {Sex}, {Nationality}, Рост: {Physics.height}, Вес: {Physics.weight}");
             Console.WriteLine($"Характеристики: удар {Shooting}, пасы {Passing}, владение мячом {Dribbling}, защита {Defending}, выносливость {Physics.stamina}, скорость {Physics.speed}");
@@ -341,10 +392,11 @@ namespace lab3
                     age = InputChecker();
                     Console.Clear();
                     Console.WriteLine("Введите пол 1/2 (муж/жен)");
-                    sex = Console.ReadLine();
+                    sex = Convert.ToString(InputChecker());
                     Console.Clear();
                     Console.WriteLine("Введите национальность");
-                    nationality = Console.ReadLine();
+                    Console.WriteLine("1. BY\n2. RU\n3. US\n4. UA\n5. DE\n6. GB\n7. PL\n8. ES\n9. TR\n10. Прочие");
+                    nationality = Convert.ToString(InputChecker());
                     Console.Clear();
                     Console.WriteLine("Введите вес");
                     weight = InputChecker();
@@ -367,7 +419,7 @@ namespace lab3
                             Console.WriteLine("Введите умение удара (от 1 до 100)");
                             int shoot = InputChecker(100);
                             Console.Clear();
-                            Console.WriteLine("Введите умение в пасс (от 1 до 100)");
+                            Console.WriteLine("Введите умение в пас (от 1 до 100)");
                             int pass = InputChecker(100);
                             Console.Clear();
                             Console.WriteLine("Введите владение мячом (от 1 до 100)");
