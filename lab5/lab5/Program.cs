@@ -81,9 +81,6 @@ namespace lab3
                     case 4:
                         Physics.speed = value;
                         break;
-                    default:
-                        Console.WriteLine("Такого значения нет");
-                        break;
                 }
             }
         }
@@ -493,7 +490,7 @@ namespace lab3
                             Console.WriteLine("2. Изменить рост");
                             Console.WriteLine("3. Изменить выносливость");
                             Console.WriteLine("4. Изменить скорость");
-                            int parameter = InputChecker();
+                            int parameter = InputChecker(4);
                             chel[n][parameter] = InputChecker();
                             Console.ReadKey();
                             Console.Clear();
