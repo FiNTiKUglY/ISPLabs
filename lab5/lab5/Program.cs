@@ -85,7 +85,10 @@ namespace lab3
             }
         }
         public abstract void SmallInfo();
-        public abstract void GetInfo();
+        public void GetInfo()
+        {
+            Console.WriteLine($"{Surname} {Name}, {Age} лет, {Sex}, {Nationality}, Рост: {Physics.height}, Вес: {Physics.weight}");
+        }
         public abstract string GetSpeciality();
        
         public void WeightCheck()
@@ -143,7 +146,7 @@ namespace lab3
         {
             Console.WriteLine($"{ID}. Футболист {Surname} {Name}");
         }
-        public override void GetInfo()
+        public void GetInfo()
         {
             Console.WriteLine($"Футболист {Surname} {Name}, {Age} лет, {Sex}, {Nationality}, Рост: {Physics.height}, Вес: {Physics.weight}");
             Console.WriteLine($"Характеристики: удар {Shooting}, пасы {Passing}, владение мячом {Dribbling}, защита {Defending}, выносливость {Physics.stamina}, скорость {Physics.speed}");
