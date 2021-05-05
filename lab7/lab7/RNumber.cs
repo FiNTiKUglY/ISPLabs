@@ -25,17 +25,10 @@ namespace lab7
 
         private static ulong GCD(ulong a, ulong b)
         {
-            if (a == 0)
-            {
-                return b;
-            }
-            else
-            {
-                while (a != b)
-                    if (a > b) a -= b;
-                    else b -= a;
-                return a;
-            }
+            while (a != b)
+                if (a > b) a -= b;
+                else b -= a;
+            return a;
         }
 
         private static ulong LCM(ulong a, ulong b)
